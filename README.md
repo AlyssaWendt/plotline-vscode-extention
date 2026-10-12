@@ -14,7 +14,22 @@ Plotline turns VS Code into a writing-friendly environment for novels, eBooks, s
 - Local-first, portable source files, offline MVP
 
 ## Status
-Design/specification only. Features below are **planned**, not implemented.
+M0 (repository scaffold) complete. All other features below are **planned**, not implemented. See [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md) for milestone status.
 
 ## Documentation
 Start with [Product Requirements](docs/PRODUCT_REQUIREMENTS.md), [Architecture](docs/ARCHITECTURE.md), and [Implementation Plan](docs/IMPLEMENTATION_PLAN.md). Coding agents should read [AGENTS.md](AGENTS.md).
+
+## Development
+
+```bash
+npm install          # install dependencies
+npm run typecheck    # TypeScript type checking
+npm run lint         # ESLint
+npm run test:unit    # Vitest unit tests (core/ logic)
+npm run test:integration  # headless VS Code integration tests
+npm test             # unit + integration tests
+npm run compile      # typecheck + esbuild bundle to dist/
+npm run watch        # esbuild in watch mode
+```
+
+To run the extension itself, open this folder in VS Code and press `F5` (Run Extension) to launch an Extension Development Host, then run **Plotline: Hello World** from the Command Palette.
